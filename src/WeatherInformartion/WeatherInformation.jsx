@@ -1,10 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Spinner from 'react-svg-spinner';
+import ErrorMessage from './ErrorMessage';
+import WeatherCard from './WeatherCard';
+import LocationBar from './LocationBar';
 
 export default class WeatherInformation extends PureComponent {
   static propTypes = {
     fetchWeather: PropTypes.func.isRequired,
     isLoading: PropTypes.bool,
+    isBroken: PropTypes.bool,
+    location: PropTypes.object,
+    forecast: PropTypes.array,
   };
 
   componentWillMount() {
@@ -14,6 +21,15 @@ export default class WeatherInformation extends PureComponent {
   }
 
   render() {
-    return <p>My Weather Information {this.props.isLoading ? 'alal' : 'pepe'} </p>;
+    const { isLoading, isBroken, location, forecast = [] } = this.props;
+    if (isLoading) return <Spinner size="64px" color="orange" />;
+    if (isBroken) return <ErrorMessage />;
+    debugger;
+    return (
+      <div>
+        <LocationBar location={location} />
+        {forecast.map(day => <WeatherCard key={day.date} />)}
+      </div>
+    );
   }
 }

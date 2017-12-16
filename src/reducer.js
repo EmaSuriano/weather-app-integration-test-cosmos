@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux';
 import { createSelector } from 'reselect';
 import { WEATHER_FETCH_ERROR, WEATHER_FETCH_PENDING, WEATHER_FETCH_SUCCESS } from './actions';
@@ -35,7 +34,18 @@ const getMyReducer = state => state.myReducer;
 
 export const isLoading = createSelector(getMyReducer, reducer => reducer.loading);
 
-export const hasError = createSelector(getMyReducer, reducer => !!reducer.error);
+export const isBroken = createSelector(getMyReducer, reducer => !!reducer.error);
+
+const getData = createSelector(
+  getMyReducer,
+  isLoading,
+  isBroken,
+  (reducer, loading, broken) => (!loading && !broken && reducer.data) || {},
+);
+
+export const getLocation = createSelector(getData, data => data.location);
+
+export const getForecast = createSelector(getData, data => data.forecast);
 
 const myApp = combineReducers({
   myReducer,

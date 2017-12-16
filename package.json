@@ -1,5 +1,5 @@
 {
-  "name": "testing-react-cosmos",
+  "name": "weather-app-cosmos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,9 +11,9 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
+    "react-svg-spinner": "^0.2.0",
     "redux": "latest",
     "redux-object-connect": "^0.1.2",
-    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1"
   },
