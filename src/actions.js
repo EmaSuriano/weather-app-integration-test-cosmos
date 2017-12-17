@@ -1,13 +1,9 @@
 const apiKey = '382ff7b58e12402a8f0175403171512';
 const baseUrl = 'http://api.apixu.com';
 
-const parseResponseToJson = response => {
-  debugger;
-  return response.json();
-};
+const parseResponseToJson = response => response.json();
 
 const parseResponseToForecast = response => {
-  debugger;
   const forecast = response.forecast.forecastday.map(({ date, day }) => ({
     date,
     condition: day.condition.code,

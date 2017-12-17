@@ -24,11 +24,10 @@ export default class WeatherInformation extends PureComponent {
     const { isLoading, isBroken, location, forecast = [] } = this.props;
     if (isLoading) return <Spinner size="64px" color="orange" />;
     if (isBroken) return <ErrorMessage />;
-    debugger;
     return (
       <div>
         <LocationBar location={location} />
-        {forecast.map(day => <WeatherCard key={day.date} />)}
+        {forecast.map(weather => <WeatherCard key={weather.date} {...weather} />)}
       </div>
     );
   }
