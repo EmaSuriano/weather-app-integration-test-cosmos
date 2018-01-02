@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './thermometer.svg';
-import './App.css';
+import './Header.css';
 
 const Header = () => (
   <header className="App-header">
