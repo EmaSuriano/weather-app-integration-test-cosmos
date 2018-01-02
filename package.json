@@ -8,7 +8,6 @@
     "moment": "^2.20.1",
     "prop-types": "latest",
     "react": "^16.2.0",
-    "react-cosmos": "^3.1.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
@@ -23,13 +22,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cosmos": "cosmos"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-react": "^7.5.1",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "react-cosmos": "^3.1.1"
   }
 }

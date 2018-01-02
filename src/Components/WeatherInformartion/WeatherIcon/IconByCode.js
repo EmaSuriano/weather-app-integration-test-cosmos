@@ -3,19 +3,23 @@ import Sunny from './Sunny';
 import Cloudy from './Cloudy';
 import Rain from './Rain';
 import Snow from './Snow';
-// import PatchyRain from './PatchyRain';
-// import Rain from './Rain';
-// import HeavyRain from './HeavyRain';
-// import Snow from './Snow';
 
 const ICON_BY_CODE = {
   1000: <Sunny />,
-  1003: <Cloudy />,
+  // 1003: <Cloudy />,
+  1003: <Snow />,
+  1005: <Cloudy patchy />,
   1063: <Rain patchy />,
-  1243: <Rain />,
   1195: <Rain lighting />,
+  1196: <Rain lighting patchy />,
+  1243: <Rain lighting />,
   1219: <Snow />,
+  1220: <Snow patchy />,
 };
+
+const getIconByCode = code => ICON_BY_CODE[code] || <Sunny />;
+
+export default getIconByCode;
 
 // const configByWeatherAPI = [
 //   {
@@ -307,5 +311,3 @@ const ICON_BY_CODE = {
 //     icon: 395,
 //   },
 // ];
-
-export default ICON_BY_CODE;
