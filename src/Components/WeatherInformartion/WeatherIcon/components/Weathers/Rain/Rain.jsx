@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Cloud, Drops, Lighting } from '../index';
-import Sunny from './Sunny';
+import { Cloud, Drops, Lighting } from '../../../components';
+import Sunny from '../Sunny';
 
 const Rain = ({ lighting, patchy }) => (
   <div>

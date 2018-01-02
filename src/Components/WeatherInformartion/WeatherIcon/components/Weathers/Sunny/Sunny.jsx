@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SunSphere, Rays } from '../index';
+import { SunSphere, Rays } from '../../index';
 
 const Sunny = ({ onTheSide }) => (
   <SunSphere onTheSide={onTheSide}>

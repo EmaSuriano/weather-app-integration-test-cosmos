@@ -1,8 +1,8 @@
 import React from 'react';
-import Sunny from './components/Weathers/Sunny';
-import Cloudy from './components/Weathers/Cloudy';
-import Rain from './components/Weathers/Rain';
-import Snow from './components/Weathers/Snow';
+import Sunny from './components/Weathers/Sunny/Sunny';
+import Cloudy from './components/Weathers/Cloudy/Cloudy';
+import Rain from './components/Weathers/Rain/Rain';
+import Snow from './components/Weathers/Snow/Snow';
 
 const CONFIG = [
   {

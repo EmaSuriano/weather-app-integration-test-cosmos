@@ -1,6 +1,6 @@
 import React from 'react';
-import Sunny from './Sunny';
-import { Cloud, Snowing } from '../index';
+import Sunny from '../Sunny/Sunny';
+import { Cloud, Snowing } from '../../index';
 import PropTypes from 'prop-types';
 
 const Snow = ({ patchy }) => (
