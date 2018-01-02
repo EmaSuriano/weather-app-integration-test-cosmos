@@ -6,3 +6,4 @@ export const AMBER = '#FFC107';
 export const GREY = '#607D8B';
 export const WHITE = '#FFFFFF';
 export const BLUE = '#2196F3';
+export const INDIGO_LIGHT = '#E8EAF6';

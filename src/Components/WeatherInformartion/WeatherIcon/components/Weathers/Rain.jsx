@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Cloud, Drops, Lighting } from './components';
+import { Cloud, Drops, Lighting } from '../index';
 import Sunny from './Sunny';
-import './styles.css';
 
 const Rain = ({ lighting, patchy }) => (
   <div>

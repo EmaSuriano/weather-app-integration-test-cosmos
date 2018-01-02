@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import WeatherIcon from './WeatherIcon';
 import { DATE_FORMAT } from 'constants';
+import { WHITE, INDIGO_LIGHT } from './WeatherIcon/colors';
 
 const CardContainer = styled.div`
-  background: white;
+  background: ${props => (props.current ? INDIGO_LIGHT : WHITE)};
   border-radius: 2px;
   width: 100%;
   height: 100%;
@@ -15,18 +16,10 @@ const CardContainer = styled.div`
   justify-content: space-evenly;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  box-shadow: 0 1px 3px
-    ${props =>
-      props.current
-        ? 'coral, 0 1px 2px coral'
-        : 'rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)'};
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   &:hover {
-    box-shadow: 0 14px 28px
-      ${props =>
-        props.current
-          ? 'coral, 0 10px 10px rgba(0, 0, 0, 0.22)'
-          : 'rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)'};
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 `;
 
@@ -50,11 +43,16 @@ export default class WeatherCard extends Component {
     const { date, condition, maxTemp, minTemp } = this.props;
     const momentDate = moment(date, DATE_FORMAT);
     const isCurrentDay = momentDate.isSame(moment(), 'day');
+    const theme = {
+      backgroundColor: isCurrentDay ? INDIGO_LIGHT : WHITE,
+      color: 'blue',
+    };
     return (
       <CardContainer current={isCurrentDay}>
-        <h3>{momentDate.format('dddd')}</h3>
-        {condition}
-        <WeatherIcon code={condition} />
+        <h4>{momentDate.format('dddd')}</h4>
+        <ThemeProvider theme={theme}>
+          <WeatherIcon code={condition} />
+        </ThemeProvider>
         <TempContainer>
           <Temp bold>{maxTemp} °</Temp>
           <Temp>- {minTemp} °</Temp>

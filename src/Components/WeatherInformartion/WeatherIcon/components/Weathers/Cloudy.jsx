@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sunny from './Sunny';
-import { Cloud } from './components';
+import { Cloud } from '../index';
 
 const Cloudy = ({ patchy }) => [
   <Cloud key="cloud" />,
