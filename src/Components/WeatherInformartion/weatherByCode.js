@@ -1,8 +1,5 @@
 import React from 'react';
-import Sunny from './components/Weathers/Sunny/Sunny';
-import Cloudy from './components/Weathers/Cloudy/Cloudy';
-import Rain from './components/Weathers/Rain/Rain';
-import Snow from './components/Weathers/Snow/Snow';
+import { Sunny, Cloudy, Rain, Snow } from 'weather-styled-icon';
 
 const CONFIG = [
   {
@@ -60,7 +57,7 @@ const CONFIG = [
 ];
 
 const buildIconsConfig = config =>
-  config.reduce((obj, item) => {
+  CONFIG.reduce((obj, item) => {
     const parsedCodes = item.code.reduce(
       (newCodes, code) => ({ ...newCodes, [code]: item.weather }),
       {},
@@ -71,8 +68,4 @@ const buildIconsConfig = config =>
     };
   }, {});
 
-const weatherByCode = buildIconsConfig(CONFIG);
-
-const getIconByCode = code => weatherByCode[code] || <Sunny />;
-
-export default getIconByCode;
+export default buildIconsConfig();

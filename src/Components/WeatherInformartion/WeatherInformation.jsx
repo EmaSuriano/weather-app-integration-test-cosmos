@@ -14,6 +14,7 @@ const WeatherCardContainer = styled.div`
   );
   grid-auto-rows: 250px;
   margin: 50px;
+  justify-self: stretch;
 `;
 
 export default class WeatherInformation extends PureComponent {
@@ -25,15 +26,15 @@ export default class WeatherInformation extends PureComponent {
   };
 
   componentWillMount() {
-    navigator.geolocation.getCurrentPosition(({ coords }) =>
-      this.props.fetchWeather(coords.latitude, coords.longitude),
-    );
+    // navigator.geolocation.getCurrentPosition(({ coords }) =>
+    //   this.props.fetchWeather(coords.latitude, coords.longitude),
+    // );
+    this.props.fetchWeather();
   }
 
   render() {
     const { isLoading, isBroken, forecast } = this.props;
-
-    if (isLoading) return <Spinner size="64px" color="coral" />;
+    if (isLoading) return <Spinner size="128px" color="coral" />;
     if (isBroken) return <ErrorMessage />;
     return (
       <WeatherCardContainer minWidth="200">

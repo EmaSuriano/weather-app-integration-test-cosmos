@@ -1,9 +1,15 @@
 import { getForecast } from './services';
 
-export const fetchWeather = (lat, long) => async dispatch => {
+const getCurrentPositionPromise = () =>
+  new Promise(resolve =>
+    navigator.geolocation.getCurrentPosition(({ coords }) => resolve(coords)),
+  );
+
+export const fetchWeather = () => async dispatch => {
   dispatch(fetchWeatherPending());
+  const { latitude, longitude } = await getCurrentPositionPromise();
   try {
-    const response = await getForecast(lat, long);
+    const response = await getForecast(latitude, longitude);
     dispatch(fetchWeatherSuccess(response));
   } catch (error) {
     dispatch(fetchWeatherError(error));

@@ -16,7 +16,8 @@
     "redux-object-connect": "^0.1.2",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "weather-styled-icon": "^1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
