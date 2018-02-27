@@ -15,6 +15,7 @@ const WeatherCardContainer = styled.div`
   grid-auto-rows: 250px;
   margin: 50px;
   justify-self: stretch;
+  align-content: center;
 `;
 
 export default class WeatherInformation extends PureComponent {

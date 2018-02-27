@@ -1,6 +1,6 @@
 const buildUrl = (lat, long) => {
   const apiKey = '382ff7b58e12402a8f0175403171512';
-  const baseUrl = 'http://api.apixu.com';
+  const baseUrl = 'https://api.apixu.com';
   return `${baseUrl}/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=6`;
 };
 
